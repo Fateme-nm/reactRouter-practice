@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const Creatinvoice = () => {
   const [invoice, setInvoice] = useState({});
@@ -9,11 +9,13 @@ const Creatinvoice = () => {
     setInvoice({ ...invoice, [e.target.name]: e.target.value });
 
   const handelSubmit = () => {
+    alert("invoice create successfully");
     navigate("/invoice", { state: "invoice create successfully" });
   };
 
   return (
-    <div>
+    <div className="page">
+      <h2>Create new invoice:</h2>
       <form>
         <label>name:</label>
         <input
@@ -45,7 +47,8 @@ const Creatinvoice = () => {
           value={invoice.due}
           name="due"
           onChange={handleChange}
-        /><br />
+        />
+        <br />
         <button onClick={handelSubmit}>submit</button>
       </form>
     </div>

@@ -1,23 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import checkLogin from "../context/checkLogin";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useLocation, Navigate } from "react-router-dom";
 
 const Requierdauth = ({ children }) => {
   const { userLogin, setUserLogin } = useContext(checkLogin);
-  const navigate = useNavigate();
   const location = useLocation();
-  console.log(userLogin);
-  
-  if (!userLogin) {
-    navigate("/login", { state: location });
-  } 
-    return (
-        <div>
-            {children}
-        </div>
-    );
 
+  if (!userLogin) {
+    alert("Please Login!");
+    return <Navigate to={"/login"} state={location.pathname} />;
+  }
+  return <div>{children}</div>;
 };
 
 export default Requierdauth;

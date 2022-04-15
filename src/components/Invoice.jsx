@@ -1,15 +1,27 @@
-import React, {useEffect} from "react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { getInvoices } from "../data";
 
 const Invoice = () => {
-  const invoices = getInvoices()
-  const location = useLocation()
-
-  useEffect(() => {
-    alert(location.state)
-  }, []);
-
+  const invoices = getInvoices();
+  const location = useLocation();
+  const [message, setMesage] = useState(location.state);
+  const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (message) {
+  //     alert(message);
+  //     setMesage(" ");
+  //   }
+  //   return () => {
+  //     navigate(location.pathname, { replace: true });
+  //   };
+  // }, []);
   return (
     <div className="page">
       <h1>This is invoice page</h1>
@@ -28,7 +40,11 @@ const Invoice = () => {
       </NavLink>
       <br></br>
       <h2>Invoices :</h2>
-      {invoices?.map(invoice => <div><Link to={invoice.number}>{invoice.name}</Link></div>)}
+      {invoices.map((invoice) => (
+        <div>
+          <Link to={`${invoice.number}`}>{invoice.name}</Link>
+        </div>
+      ))}
       <Outlet />
     </div>
   );
