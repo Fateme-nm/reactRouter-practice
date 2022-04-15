@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Contact = () => {
   return (
     <div className="page">
-      <h2>This is contact page</h2>
+      <h1>This is contact page</h1>
       <NavLink
         to="/contact"
         style={({ isActive }) => ({ color: isActive ? "green" : "red" })}

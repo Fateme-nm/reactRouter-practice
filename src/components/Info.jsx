@@ -4,7 +4,7 @@ const Info = () => {
   return (
     <div>
       <br></br>
-      <h4>information about invoice page:</h4>
+      <h2>information about invoice page:</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
         officia eligendi sit. Aliquam sit modi consequuntur maiores. Omnis,

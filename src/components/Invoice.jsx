@@ -4,7 +4,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const Invoice = () => {
   return (
     <div className="page">
-      <h2>This is invoice page</h2>
+      <h1>This is invoice page</h1>
       <NavLink
         to="/contact"
         style={({ isActive }) => ({ color: isActive ? "green" : "red" })}
