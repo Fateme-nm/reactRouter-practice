@@ -10,7 +10,7 @@ const Header = () => {
             Contact
           </Link>
           <Link to="/invoice" className="link">
-            Invoice
+            Invoices
           </Link>
           <Link to="/create" className="link">
             Create invoice
