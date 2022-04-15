@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <div className="Header">
+      <header className="Header">
         <div>
           <Link to="/contact" className="link">
             Contact
@@ -16,7 +16,7 @@ const Header = () => {
         <div>
           <p>Wellcome!</p>
         </div>
-      </div>
+      </header>
       <main>
         <Outlet />
       </main>
