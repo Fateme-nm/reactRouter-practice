@@ -2,9 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { getInvoice } from "../data";
 
-const Post = () => {
+const InvoiceInfo = () => {
   let params = useParams();
-  const invoice = getInvoice(+params.post);
+  const invoice = getInvoice(+params.invoiceNumber);
 
   return (
     <div className="page">
@@ -23,4 +23,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default InvoiceInfo;

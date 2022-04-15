@@ -3,7 +3,7 @@ import {Route, Routes} from 'react-router-dom'
 import Contact from './components/Contact';
 import Invoice from './components/Invoice';
 import Header from './components/Header';
-import Post from './components/Post'
+import InvoiceInfo from './components/InvoiceInfo'
 import Info from './components/Info';
 
 
@@ -14,7 +14,7 @@ function App() {
         <Route path='/contact' element={<Contact />}/>
         <Route path='/invoice' element={<Invoice />}>
           <Route index element={<Info />} />
-          <Route path=':post' element={<Post />} />
+          <Route path=':invoiceNumber' element={<InvoiceInfo />} />
         </Route>
         <Route 
         path='*'
