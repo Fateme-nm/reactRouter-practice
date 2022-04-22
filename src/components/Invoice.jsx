@@ -42,7 +42,7 @@ const Invoice = () => {
       <h2>Invoices :</h2>
       {invoices.map((invoice) => (
         <div>
-          <Link to={`${invoice.number}`}>{invoice.name}</Link>
+          <Link to={`${invoice.number}`} key={invoice.name}>{invoice.name}</Link>
         </div>
       ))}
       <Outlet />
