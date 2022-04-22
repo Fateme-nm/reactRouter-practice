@@ -10,12 +10,15 @@ import Login from "./components/Login";
 import { useState } from "react";
 import CheckLogin from "./context/checkLogin";
 import RequierdAuth from "./components/RequierdAuth";
+import {Provider} from "react-redux";
+import {store} from "./store"
 
 function App() {
-  const [userLogin, setUserLogin] = useState(false);
+  // const [userLogin, setUserLogin] = useState(false);
 
   return (
-    <CheckLogin.Provider value={{ userLogin, setUserLogin }}>
+    // <CheckLogin.Provider value={{ userLogin, setUserLogin }}>
+    <Provider store={store}>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route path="/login" element={<Login />} />
@@ -46,7 +49,8 @@ function App() {
           />
         </Route>
       </Routes>
-    </CheckLogin.Provider>
+    </Provider>
+    // </CheckLogin.Provider>
   );
 }
 
