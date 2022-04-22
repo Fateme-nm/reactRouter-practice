@@ -33,7 +33,7 @@ function App() {
             }
           ></Route>
 
-          <Route path="/invoice" element={<Invoice />}>
+          <Route path="/invoice" element={<RequierdAuth><Invoice /></RequierdAuth>}>
             <Route index element={<Info />} />
             <Route path=":invoiceNumber" element={<InvoiceInfo />} />
           </Route>
